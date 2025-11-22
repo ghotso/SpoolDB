@@ -1,3 +1,8 @@
+---
+title: Consumption Form Modal
+sidebar_position: 2
+---
+
 # Consumption Form Modal
 
 **File:** `frontend/src/components/ConsumptionFormModal.tsx`

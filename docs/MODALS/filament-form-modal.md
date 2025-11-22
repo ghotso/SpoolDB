@@ -1,3 +1,8 @@
+---
+title: Filament Form Modal
+sidebar_position: 1
+---
+
 # Filament Form Modal
 
 **File:** `frontend/src/components/FilamentFormModal.tsx`

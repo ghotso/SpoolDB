@@ -1,3 +1,8 @@
+---
+title: Template Form Page
+sidebar_position: 8
+---
+
 # Template Form Page
 
 **File:** `frontend/src/pages/TemplateForm.tsx`  

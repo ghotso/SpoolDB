@@ -1,3 +1,8 @@
+---
+title: Settings API
+sidebar_position: 7
+---
+
 # Settings API
 
 Complete API reference for application settings endpoints.

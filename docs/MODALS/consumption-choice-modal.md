@@ -1,3 +1,8 @@
+---
+title: Consumption Choice Modal
+sidebar_position: 3
+---
+
 # Consumption Choice Modal
 
 **File:** `frontend/src/components/ConsumptionChoiceModal.tsx`

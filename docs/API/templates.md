@@ -1,3 +1,8 @@
+---
+title: Templates API
+sidebar_position: 4
+---
+
 # Templates API
 
 Complete API reference for filament template management endpoints.

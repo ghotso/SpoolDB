@@ -1,3 +1,8 @@
+---
+title: Inventory Page
+sidebar_position: 1
+---
+
 # Inventory Page
 
 **File:** `frontend/src/pages/Inventory.tsx`  

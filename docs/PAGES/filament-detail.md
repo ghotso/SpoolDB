@@ -1,3 +1,8 @@
+---
+title: Filament Detail Page
+sidebar_position: 2
+---
+
 # Filament Detail Page
 
 **File:** `frontend/src/pages/FilamentDetail.tsx`  

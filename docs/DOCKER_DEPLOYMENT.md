@@ -1,3 +1,8 @@
+---
+title: Docker Deployment
+sidebar_position: 2
+---
+
 # Docker Deployment Guide
 
 ## Quick Start

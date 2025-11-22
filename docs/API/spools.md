@@ -1,3 +1,8 @@
+---
+title: Spools API
+sidebar_position: 2
+---
+
 # Spools API
 
 Complete API reference for spool management endpoints.

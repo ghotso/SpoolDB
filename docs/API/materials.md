@@ -1,3 +1,8 @@
+---
+title: Materials API
+sidebar_position: 5
+---
+
 # Materials API
 
 Complete API reference for material management endpoints.

@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  spooldb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: spooldb:latest
+    container_name: spooldb
+    ports:
+      - "${PORT:-8080}:8080"
+    volumes:
+      # Persist database across container restarts
+      - ./data:/data
+      # Mount locales for easy language file updates
+      - ./locales:/app/locales:ro
+    environment:
+      - NODE_ENV=production
+      - PORT=${PORT:-8080}
+      - DB_PATH=${DB_PATH:-/data/spooldb.sqlite}
+      - LOCALES_PATH=${LOCALES_PATH:-/app/locales}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:8080/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+    # Note: User is set in Dockerfile, but volume permissions may need adjustment
+    # If you get permission errors, you may need to run:
+    # docker exec -u root spooldb chown -R node:node /data
+

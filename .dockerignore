@@ -1,0 +1,59 @@
+# Dependencies
+node_modules
+**/node_modules
+
+# Build outputs
+dist
+**/dist
+backend/data
+frontend/.vite
+
+# Git
+.git
+.gitignore
+.github
+
+# Documentation (not needed in image)
+*.md
+docs/
+PRD/
+
+# Environment and config
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Database files (should be in volume)
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+data/
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Test files
+**/*.test.ts
+**/*.test.js
+**/*.spec.ts
+**/*.spec.js
+coverage/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+

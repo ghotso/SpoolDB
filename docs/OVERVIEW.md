@@ -1,6 +1,6 @@
 ---
 title: Overview
-sidebar_position: 0
+sidebar_position: 2
 ---
 
 # SpoolDB Overview

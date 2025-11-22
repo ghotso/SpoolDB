@@ -18,7 +18,7 @@ The Filament Detail page provides a comprehensive view of a single filament, inc
 - **Basic Info**: Name, material, color (with color dot), manufacturer
 - **Remaining Weight**: Displayed in grams and percentage
 - **Progress Bar**: Visual indicator with color coding (green/yellow/red)
-- **Low Stock Warning**: Alert when <20% remaining
+- **Low Stock Warning**: Alert when `<20%` remaining
 - **Notes**: Display filament notes if available
 - **Archived Badge**: Shows if filament is archived
 - **Spool Count**: Number of spools for this filament

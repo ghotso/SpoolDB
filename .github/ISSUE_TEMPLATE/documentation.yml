@@ -1,0 +1,104 @@
+name: Documentation
+description: 📚 Suggest improvements or report issues with documentation
+title: "[Docs] "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        📚 Thanks for helping improve SpoolDB's documentation!
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: 📝 Documentation Issue
+      description: What documentation problem are you addressing? (e.g., missing information, unclear instructions, outdated content)
+      placeholder: |
+        Example:
+        - Missing information about...
+        - Unclear instructions for...
+        - Outdated content in...
+    validations:
+      required: true
+
+  - type: textarea
+    id: location
+    attributes:
+      label: 📍 Location
+      description: Where is this documentation issue? (e.g., README.md, API docs, specific page/section)
+      placeholder: |
+        Example:
+        - README.md, Installation section
+        - API documentation, /api/filaments endpoint
+        - Settings page help text
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: 💡 Suggested Improvement
+      description: How would you improve this documentation? What should be added, changed, or clarified?
+      placeholder: |
+        Example:
+        - Add step-by-step guide for...
+        - Clarify that X requires Y
+        - Add example code snippet for...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: 📂 Documentation Type
+      description: What type of documentation is affected?
+      options:
+        - README
+        - API Documentation
+        - Code Comments
+        - In-app Help/UI Text
+        - Setup/Installation Guide
+        - Usage Examples
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: ⚡ Priority
+      description: How important is this documentation improvement?
+      options:
+        - Nice to have
+        - Would be helpful
+        - Important
+        - Critical (blocks users)
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: 🤝 Contribution
+      options:
+        - label: I'm willing to help write/improve this documentation
+        - label: I can help with reviewing documentation changes
+        - label: I can provide examples or use cases
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: 📎 Additional Context
+      description: Add any other context, links, screenshots, or examples about the documentation issue here.
+      placeholder: Any additional information that might be helpful...
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: ✔️ Checklist
+      options:
+        - label: I have searched existing issues to ensure this documentation issue hasn't been reported
+          required: true
+        - label: I have provided clear location and suggested improvement
+          required: true
+

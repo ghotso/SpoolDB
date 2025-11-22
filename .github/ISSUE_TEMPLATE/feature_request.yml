@@ -1,0 +1,85 @@
+name: Feature Request
+description: ✨ Suggest a new feature or enhancement for SpoolDB
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ✨ Thanks for suggesting a new feature! Your input helps make SpoolDB better.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 🎯 Problem Statement
+      description: What problem does this feature solve? What pain point does it address?
+      placeholder: I'm always frustrated when...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: 💡 Proposed Solution
+      description: Describe the solution you'd like to see.
+      placeholder: It would be great if...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 🔄 Alternatives Considered
+      description: Describe any alternative solutions or features you've considered.
+      placeholder: Alternative approaches...
+
+  - type: textarea
+    id: usecase
+    attributes:
+      label: 📋 Use Case
+      description: How would you use this feature? Provide a concrete example.
+      placeholder: |
+        Example:
+        - I want to track...
+        - When I do X, I need Y to happen
+        - This would help me with...
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: ⚡ Priority
+      description: How important is this feature to you?
+      options:
+        - Nice to have
+        - Would be helpful
+        - Important
+        - Critical
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: 🤝 Contribution
+      options:
+        - label: I'm willing to help implement this feature
+        - label: I can help with testing
+        - label: I can help with documentation
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: 📝 Additional Context
+      description: Add any other context, mockups, or examples about the feature request here.
+      placeholder: Any additional information...
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: ✔️ Checklist
+      options:
+        - label: I have searched existing issues to ensure this feature hasn't been requested
+          required: true
+        - label: I have provided a clear problem statement and proposed solution
+          required: true
+

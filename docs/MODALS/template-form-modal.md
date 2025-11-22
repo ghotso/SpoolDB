@@ -81,3 +81,4 @@ interface TemplateFormModalProps {
 - Templates cannot be deleted if referenced by filaments
 - Templates do not include color (selected when creating filament from template)
 
+

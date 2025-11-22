@@ -186,3 +186,4 @@ Archive or unarchive a spool.
 - Remaining usable weight = `weight_g - empty_weight_g`
 - Consumption entries automatically deduct from the most recently used spool
 
+

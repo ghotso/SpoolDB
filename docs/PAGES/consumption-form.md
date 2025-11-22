@@ -56,3 +56,4 @@ The Consumption Form page provides a full-page form for creating or editing cons
 - On success: Navigates to `/history` (History page)
 - Cancel button: Navigates to `/history` (History page)
 
+

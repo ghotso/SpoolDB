@@ -60,3 +60,4 @@ Each template card has three action buttons:
 - Templates do not include color (must be selected when creating filament)
 - Template name is used as the default filament name
 
+

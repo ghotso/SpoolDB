@@ -186,3 +186,4 @@ Delete a consumption entry.
 - When a spool's weight reaches zero, it is automatically archived
 - The filament's `remaining_weight_g` is calculated as the sum of all non-archived spool weights
 
+

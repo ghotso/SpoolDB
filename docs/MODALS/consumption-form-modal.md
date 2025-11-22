@@ -90,3 +90,4 @@ interface ConsumptionFormModalProps {
 - When a spool reaches zero weight, it is automatically archived
 - Editing consumption recalculates weight differences
 
+

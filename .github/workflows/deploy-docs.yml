@@ -36,12 +36,11 @@ jobs:
 
       - name: Copy documentation files
         run: |
-          # Remove existing files in docs-repo (except .git)
-          find docs-repo -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          # Remove existing docs folder in target repo if it exists
+          rm -rf docs-repo/docs
           
-          # Copy all contents from docs/ directly to docs-repo root
-          # This copies the contents, NOT the docs directory itself
-          cp -rT docs docs-repo || cp -r docs/. docs-repo/
+          # Copy the docs folder from source to target repo
+          cp -r docs docs-repo/
 
       - name: Commit and push changes
         working-directory: docs-repo

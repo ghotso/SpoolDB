@@ -63,3 +63,4 @@ const customMaterials = materials.filter(m => m.is_custom);
 - Materials in use by filaments or templates cannot be deleted
 - Threshold is stored as a string in the database
 
+

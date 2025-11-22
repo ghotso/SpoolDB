@@ -77,3 +77,4 @@ interface RestockModalProps {
 - Filament's `remaining_weight_g` is automatically updated
 - If `onSuccess` is not provided, falls back to `window.location.reload()`
 
+

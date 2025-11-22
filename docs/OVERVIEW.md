@@ -120,3 +120,4 @@ The application supports light and dark modes with a comprehensive design system
 - **Components**: Consistent styling with rounded corners, shadows, and animations
 - **Responsive**: Mobile-friendly design
 
+

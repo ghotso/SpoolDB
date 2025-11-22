@@ -76,3 +76,4 @@ interface ColorPickerModalProps {
 - Modal has backdrop blur effect
 - Clicking backdrop closes the modal
 
+

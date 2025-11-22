@@ -138,3 +138,4 @@ Delete a material.
 - Only custom materials (`is_custom: true`) can be deleted
 - Materials that are referenced by filaments or templates cannot be deleted
 
+

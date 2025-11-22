@@ -73,6 +73,12 @@ router.post('/parse', upload.single('file'), async (req, res) => {
       return res.status(400).json({ error: 'No file uploaded' });
     }
 
+    // Validate file size (limit to 10MB to prevent DoS)
+    const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+    if (req.file.buffer.length > MAX_FILE_SIZE) {
+      return res.status(400).json({ error: 'File too large. Maximum size is 10MB' });
+    }
+
     // Parse G-code file
     const fileContent = req.file.buffer.toString('utf-8');
     const parsed = parseGCode(fileContent);
@@ -244,6 +250,12 @@ router.post('/upload', upload.single('file'), async (req, res) => {
   try {
     if (!req.file) {
       return res.status(400).json({ error: 'No file uploaded' });
+    }
+
+    // Validate file size (limit to 10MB to prevent DoS)
+    const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+    if (req.file.buffer.length > MAX_FILE_SIZE) {
+      return res.status(400).json({ error: 'File too large. Maximum size is 10MB' });
     }
 
     // Validate request body

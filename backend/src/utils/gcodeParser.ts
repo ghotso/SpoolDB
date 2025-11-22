@@ -59,14 +59,15 @@ function parseAnycubicSlicerNext(content: string): ParsedGCode {
       metadata.usedFilamentG = volumeCm3 * density;
     }
 
-    // Extract print_time
-    const printTimeMatch = content.match(/print_time\s*=\s*([^\n]+)/i);
+    // Extract print_time (limit to 100 chars to prevent ReDoS)
+    const printTimeMatch = content.match(/print_time\s*=\s*([^\n]{0,100})/i);
     if (printTimeMatch) {
       metadata.printTime = printTimeMatch[1].trim();
     }
 
     // Extract material_type from ams_info
-    const amsInfoMatch = content.match(/ams_info\s*=\s*begin([\s\S]*?)ams_info\s*=\s*end/i);
+    // Use bounded quantifier to prevent ReDoS (limit to 5000 chars)
+    const amsInfoMatch = content.match(/ams_info\s*=\s*begin([\s\S]{0,5000}?)ams_info\s*=\s*end/i);
     if (amsInfoMatch) {
       const amsInfo = amsInfoMatch[1];
       
@@ -88,7 +89,8 @@ function parseAnycubicSlicerNext(content: string): ParsedGCode {
     }
 
     // Extract model name from source_info
-    const sourceInfoMatch = content.match(/source_info:\s*({[^}]+})/i);
+    // Use a safer regex with bounded quantifier to prevent ReDoS
+    const sourceInfoMatch = content.match(/source_info:\s*(\{[^{}]{0,10000}\})/i);
     if (sourceInfoMatch) {
       try {
         const sourceInfo = JSON.parse(sourceInfoMatch[1]);

@@ -3,6 +3,7 @@ import cors from 'cors';
 import { migrate } from './db/migrate.js';
 import db from './db/database.js';
 import { setupSwagger } from './swagger/swagger.js';
+import { apiLimiter } from './middleware/rateLimiter.js';
 
 // Routes
 import materialsRouter from './routes/materials.js';
@@ -22,6 +23,9 @@ const PORT = process.env.PORT || 8080;
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Apply rate limiting to all API routes
+app.use('/api', apiLimiter);
 
 // Initialize database with migration
 console.log('Initializing database...');
@@ -60,7 +64,8 @@ if (process.env.NODE_ENV === 'production') {
       app.use(express.static(staticPath));
       
       // SPA fallback - serve index.html for all non-API routes
-      app.get('*', (req, res, next) => {
+      // Apply rate limiting to prevent abuse
+      app.get('*', apiLimiter, (req, res, next) => {
         // Skip API routes
         if (req.path.startsWith('/api') || req.path.startsWith('/health')) {
           return next();

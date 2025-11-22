@@ -2,6 +2,7 @@ import { Router } from 'express';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { strictLimiter } from '../middleware/rateLimiter.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -48,7 +49,7 @@ const localesPath = process.env.LOCALES_PATH || (() => {
  *         description: Server error
  */
 // GET /api/i18n/list
-router.get('/list', (req, res) => {
+router.get('/list', strictLimiter, (req, res) => {
   try {
     if (!fs.existsSync(localesPath)) {
       return res.json([]);
@@ -102,7 +103,7 @@ router.get('/list', (req, res) => {
  *         description: Server error
  */
 // GET /api/i18n/:language
-router.get('/:language', (req, res) => {
+router.get('/:language', strictLimiter, (req, res) => {
   try {
     const language = req.params.language;
     
@@ -111,16 +112,33 @@ router.get('/:language', (req, res) => {
       return res.status(400).json({ error: 'Invalid language code' });
     }
 
-    const filePath = path.join(localesPath, `${language}.json`);
+    // Construct file path
+    const fileName = `${language}.json`;
+    const filePath = path.join(localesPath, fileName);
     
-    console.log(`[i18n] Loading language: ${language} from: ${filePath}`);
+    // Security: Resolve to absolute path and ensure it's within localesPath
+    // This prevents directory traversal attacks (e.g., ../../../etc/passwd)
+    const resolvedPath = path.resolve(filePath);
+    const resolvedLocalesPath = path.resolve(localesPath);
     
-    if (!fs.existsSync(filePath)) {
-      console.error(`[i18n] File not found: ${filePath}`);
-      return res.status(404).json({ error: 'Language not found', path: filePath });
+    // Ensure the resolved path is within the locales directory
+    if (!resolvedPath.startsWith(resolvedLocalesPath)) {
+      return res.status(400).json({ error: 'Invalid language code' });
+    }
+    
+    // Additional check: ensure filename doesn't contain path separators
+    if (fileName.includes(path.sep) || fileName.includes('/') || fileName.includes('\\')) {
+      return res.status(400).json({ error: 'Invalid language code' });
+    }
+    
+    console.log(`[i18n] Loading language: ${language} from: ${resolvedPath}`);
+    
+    if (!fs.existsSync(resolvedPath)) {
+      console.error(`[i18n] File not found: ${resolvedPath}`);
+      return res.status(404).json({ error: 'Language not found' });
     }
 
-    const content = fs.readFileSync(filePath, 'utf-8');
+    const content = fs.readFileSync(resolvedPath, 'utf-8');
     const translations = JSON.parse(content);
     
     console.log(`[i18n] Loaded ${Object.keys(translations).length} top-level keys for ${language}`);

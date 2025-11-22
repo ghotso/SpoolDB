@@ -3,6 +3,7 @@ import multer from 'multer';
 import { parseGCode } from '../utils/gcodeParser.js';
 import { z } from 'zod';
 import db from '../db/database.js';
+import { uploadLimiter } from '../middleware/rateLimiter.js';
 
 const router = Router();
 
@@ -67,7 +68,7 @@ const uploadGCodeSchema = z.object({
  *       500:
  *         description: Server error
  */
-router.post('/parse', upload.single('file'), async (req, res) => {
+router.post('/parse', uploadLimiter, upload.single('file'), async (req, res) => {
   try {
     if (!req.file) {
       return res.status(400).json({ error: 'No file uploaded' });
@@ -246,7 +247,7 @@ async function findMatchingFilaments(metadata: any) {
  *       500:
  *         description: Server error
  */
-router.post('/upload', upload.single('file'), async (req, res) => {
+router.post('/upload', uploadLimiter, upload.single('file'), async (req, res) => {
   try {
     if (!req.file) {
       return res.status(400).json({ error: 'No file uploaded' });

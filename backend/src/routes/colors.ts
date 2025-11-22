@@ -3,6 +3,7 @@ import { colorRepository } from '../repositories/ColorRepository.js';
 import db from '../db/database.js';
 import type { Color } from '../types/index.js';
 import { z } from 'zod';
+import { strictLimiter } from '../middleware/rateLimiter.js';
 
 const router = Router();
 
@@ -71,7 +72,7 @@ router.get('/', (req, res) => {
  *         description: Server error
  */
 // GET /api/colors/most-used (must be before /:id route)
-router.get('/most-used', (req, res) => {
+router.get('/most-used', strictLimiter, (req, res) => {
   try {
     const limit = parseInt(req.query.limit as string) || 15;
     const stmt = db.prepare(`

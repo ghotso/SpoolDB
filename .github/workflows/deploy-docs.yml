@@ -1,0 +1,70 @@
+name: Deploy Documentation
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - 'docs/**'
+      - '.github/workflows/deploy-docs.yml'
+  workflow_dispatch:
+
+jobs:
+  deploy-docs:
+    name: Deploy Documentation to SpoolDB-docs
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout source repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Clone docs repository
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          git clone https://${GH_TOKEN}@github.com/ghotso/SpoolDB-docs.git docs-repo
+
+      - name: Copy documentation files
+        run: |
+          # Remove existing files in docs-repo (except .git)
+          find docs-repo -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          
+          # Copy all contents from docs/ directly to docs-repo root
+          # This copies the contents, NOT the docs directory itself
+          cp -rT docs docs-repo || cp -r docs/. docs-repo/
+
+      - name: Commit and push changes
+        working-directory: docs-repo
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          git add -A
+          
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "docs: Update documentation from SpoolDB [skip ci]"
+            git push https://${GH_TOKEN}@github.com/ghotso/SpoolDB-docs.git HEAD:main || \
+            git push https://${GH_TOKEN}@github.com/ghotso/SpoolDB-docs.git HEAD:master
+          fi
+
+      - name: Summary
+        run: |
+          echo "## Documentation Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Documentation files have been deployed to [ghotso/SpoolDB-docs](https://github.com/ghotso/SpoolDB-docs)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Files deployed:**" >> $GITHUB_STEP_SUMMARY
+          find docs -type f -name "*.md" | sed 's|^|  - |' >> $GITHUB_STEP_SUMMARY
+

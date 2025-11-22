@@ -57,7 +57,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
         setTranslations(loadedTranslations);
         
         // Compare with English to find missing translations (only in dev mode)
-        if (import.meta.env.MODE === 'development' && language !== 'en' && Object.keys(englishTranslations).length > 0) {
+        if ((import.meta as any).env?.MODE === 'development' && language !== 'en' && Object.keys(englishTranslations).length > 0) {
           const missing = findMissingTranslations(englishTranslations, loadedTranslations);
           setMissingTranslations(missing);
           if (missing.length > 0) {

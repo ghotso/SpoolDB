@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { templatesApi, materialsApi } from '../api/client';
-import type { Material, Template, CreateTemplateInput } from '../types';
+import type { Material, CreateTemplateInput } from '../types';
 import { useI18n } from '../contexts/I18nContext';
 import { useTheme } from '../theme/ThemeContext';
 import { Button } from '../components/Button';
@@ -136,7 +136,7 @@ export function TemplateForm() {
           <Input
             label={t('filament.manufacturer')}
             type="text"
-            value={formData.manufacturer}
+            value={formData.manufacturer || ''}
             onChange={(e) => setFormData({ ...formData, manufacturer: e.target.value })}
           />
 
@@ -155,14 +155,14 @@ export function TemplateForm() {
               type="number"
               step="0.1"
               min="0"
-              value={formData.empty_weight_g}
+              value={formData.empty_weight_g || 0}
               onChange={(e) => setFormData({ ...formData, empty_weight_g: parseFloat(e.target.value) || 0 })}
             />
           </div>
 
           <Textarea
             label={t('filament.notes')}
-            value={formData.notes}
+            value={formData.notes || ''}
             onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
             rows={4}
           />

@@ -118,14 +118,12 @@ export function ColorSelector({
               setCustomColorName(newName);
             }
           }}
-          onColorNameChange={setCustomColorName}
           onClose={() => {
             setShowColorPicker(false);
             setCustomColorName('');
             setCustomColorHex('#000000');
           }}
           onSave={handleCustomColorSave}
-          colorName={customColorName}
           isEdit={false}
         />
       )}

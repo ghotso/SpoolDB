@@ -6,7 +6,7 @@ export function TranslationWarning() {
   const { theme } = useTheme();
 
   // Only show in development mode
-  if (import.meta.env.MODE !== 'development') {
+  if ((import.meta as any).env?.MODE !== 'development') {
     return null;
   }
 

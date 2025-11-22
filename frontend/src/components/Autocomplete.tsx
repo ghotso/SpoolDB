@@ -116,7 +116,7 @@ export function Autocomplete({
             color: theme.colors.text.primary,
             transition: `all ${theme.transitions.fast}`,
           }}
-          onBlur={(e) => {
+          onBlur={() => {
             // Delay to allow option click to register
             setTimeout(() => {
               if (!dropdownRef.current?.contains(document.activeElement)) {

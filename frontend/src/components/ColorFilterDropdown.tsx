@@ -1,6 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
 import type { Color } from '../types';
-import { useI18n } from '../contexts/I18nContext';
 import { useTheme } from '../theme/ThemeContext';
 
 interface ColorFilterDropdownProps {
@@ -18,7 +17,6 @@ export function ColorFilterDropdown({
   label,
   allLabel
 }: ColorFilterDropdownProps) {
-  const { t } = useI18n();
   const { theme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);

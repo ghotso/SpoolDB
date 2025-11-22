@@ -121,7 +121,7 @@ async function findMatchingFilaments(metadata: any) {
   // Find filaments with matching material that are not archived
   // Calculate remaining weight from sum of spools
   let filamentStmt;
-  let filaments: any[];
+  let filaments: any[] = [];
 
   if (color) {
     // Try to match by material and color hex

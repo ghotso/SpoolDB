@@ -236,7 +236,7 @@ export function TemplateFormModal({ onClose, onSuccess, templateId }: TemplateFo
           <Input
             label={t('filament.manufacturer')}
             type="text"
-            value={formData.manufacturer}
+            value={formData.manufacturer || ''}
             onChange={(e) => setFormData({ ...formData, manufacturer: e.target.value })}
           />
 
@@ -255,14 +255,14 @@ export function TemplateFormModal({ onClose, onSuccess, templateId }: TemplateFo
               type="number"
               step="0.1"
               min="0"
-              value={formData.empty_weight_g}
+              value={formData.empty_weight_g || 0}
               onChange={(e) => setFormData({ ...formData, empty_weight_g: parseFloat(e.target.value) || 0 })}
             />
           </div>
 
           <Textarea
             label={t('filament.notes')}
-            value={formData.notes}
+            value={formData.notes || ''}
             onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
             rows={4}
           />

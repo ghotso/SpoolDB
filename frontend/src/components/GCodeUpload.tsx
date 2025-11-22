@@ -115,7 +115,7 @@ export function GCodeUpload({ onSuccess, onError, filamentId, onCancel, onCreate
     try {
       setUploading(true);
 
-      const result = await gcodeApi.upload(file, selectedFilamentId, 'success');
+      await gcodeApi.upload(file, selectedFilamentId, 'success');
 
       // Clear file input
       if (fileInputRef.current) {

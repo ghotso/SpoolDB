@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { filamentsApi, materialsApi, colorsApi } from '../api/client';
 import type { Filament, Material, Color } from '../types';
 import { useI18n } from '../contexts/I18nContext';
@@ -94,11 +94,6 @@ export function Inventory() {
     // If no spools data, we can't calculate percentage
     // Return null to indicate we should show "No spools" instead
     return null;
-  };
-
-  const isLowStock = (filament: Filament): boolean => {
-    const percent = calculateRemainingPercent(filament);
-    return percent !== null && percent < 20;
   };
 
   if (loading) {
@@ -224,7 +219,7 @@ export function Inventory() {
         }}>
           {filteredFilaments.map(filament => {
             const percent = calculateRemainingPercent(filament);
-            const hasSpools = filament.spools && filament.spools.filter(spool => !spool.archived).length > 0;
+            // const hasSpools = filament.spools && filament.spools.filter(spool => !spool.archived).length > 0;
             const lowStock = percent !== null && percent < 20;
             
             return (

@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { filamentsApi, consumptionApi, spoolsApi } from '../api/client';
-import type { Filament, ConsumptionEntry, Spool } from '../types';
+import type { Filament, ConsumptionEntry } from '../types';
 import { useI18n } from '../contexts/I18nContext';
 import { useTheme } from '../theme/ThemeContext';
 import { Button } from '../components/Button';
@@ -507,7 +507,6 @@ export function FilamentDetail() {
               <tbody>
                 {sortedSpools.map((spool, index) => {
                   const remaining = spool.weight_g - (spool.empty_weight_g || 0);
-                  const isUsed = spool.weight_g !== spool.starting_weight_g;
                   const isLast = index === sortedSpools.length - 1;
                   
                   return (

@@ -6,7 +6,7 @@ slug: /
 
 # SpoolDB Documentation
 
-Welcome to the comprehensive documentation for SpoolDB, an open-source filament inventory management system for 3D printing enthusiasts.
+Welcome to the documentation for SpoolDB, an open-source filament inventory management system for 3D printing enthusiasts.
 
 ## Documentation Structure
 

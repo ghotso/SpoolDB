@@ -30,8 +30,7 @@ jobs:
         run: npm ci
 
       - name: Type check
-        working-directory: ./backend
-        run: npm run build --workspace=backend
+        run: npm run build -w backend
 
   frontend-checks:
     name: Frontend Type Check
@@ -52,8 +51,7 @@ jobs:
         run: npm ci
 
       - name: Type check
-        working-directory: ./frontend
-        run: npm run build --workspace=frontend
+        run: npm run build -w frontend
 
   json-validation:
     name: Validate JSON Files

@@ -1,6 +1,6 @@
 ---
 title: Docker Deployment
-sidebar_position: 99
+sidebar_position: 4
 ---
 
 # Docker Deployment Guide

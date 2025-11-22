@@ -28,3 +28,4 @@ Welcome to the comprehensive documentation for SpoolDB, an open-source filament 
 3. Check [API Reference](API_REFERENCE.md) for backend integration
 4. Explore [Frontend Pages](FRONTEND_PAGES.md) for UI documentation
 
+

@@ -80,3 +80,4 @@ Update a setting.
 - **Description:** Threshold in grams for low-stock notifications. Filaments with remaining weight at or below this threshold will appear in notifications.
 - **Default:** `"100"`
 
+

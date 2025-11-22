@@ -97,3 +97,4 @@ Displays all consumption entries for this filament:
 - `spoolsApi.archive(spoolId, true)`: Archive spool
 - `consumptionApi.delete(id)`: Delete consumption entry
 
+

@@ -76,3 +76,4 @@ The Filament Form page provides a full-page form for creating or editing filamen
 - On success: Navigates to `/` (Inventory page)
 - Cancel button: Navigates to `/` (Inventory page)
 
+

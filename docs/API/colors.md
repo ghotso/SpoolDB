@@ -176,3 +176,4 @@ Delete a color.
 - Only custom colors (`is_custom: true`) can be deleted
 - Colors that are referenced by filaments cannot be deleted
 
+

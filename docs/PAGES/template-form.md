@@ -48,3 +48,4 @@ The Template Form page provides a full-page form for creating or editing filamen
 - Templates cannot be deleted if referenced by filaments
 - Templates are used to pre-fill filament forms but do not include color selection
 
+

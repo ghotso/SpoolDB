@@ -235,3 +235,4 @@ Restock a filament by adding new spools.
 - `404`: Filament not found
 - `500`: Server error
 
+

@@ -91,3 +91,4 @@ Consumption Choice Modal
 - G-code upload can suggest creating a new filament if no match is found
 - Manual entry always requires filament selection
 
+

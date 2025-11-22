@@ -78,3 +78,4 @@ Filters are applied on the backend:
 - `filamentsApi.list(false)`: Load filaments for filter dropdown
 - `consumptionApi.delete(id)`: Delete consumption entry
 
+

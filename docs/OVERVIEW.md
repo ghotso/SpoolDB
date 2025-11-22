@@ -1,3 +1,8 @@
+---
+title: Overview
+sidebar_position: 0
+---
+
 # SpoolDB Overview
 
 ## Introduction

@@ -1,3 +1,8 @@
+---
+title: Templates Page
+sidebar_position: 7
+---
+
 # Templates Page
 
 **File:** `frontend/src/pages/Templates.tsx`  

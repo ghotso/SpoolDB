@@ -1,3 +1,8 @@
+---
+title: History Page
+sidebar_position: 5
+---
+
 # History Page
 
 **File:** `frontend/src/pages/History.tsx`  

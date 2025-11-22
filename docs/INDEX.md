@@ -1,3 +1,8 @@
+---
+title: Documentation
+sidebar_position: 0
+---
+
 # SpoolDB Documentation
 
 Welcome to the comprehensive documentation for SpoolDB, an open-source filament inventory management system for 3D printing enthusiasts.
@@ -11,7 +16,6 @@ Welcome to the comprehensive documentation for SpoolDB, an open-source filament 
 - **[Frontend Components](FRONTEND_COMPONENTS.md)** - Reusable UI components
 - **[Data Models](DATA_MODELS.md)** - Database schema and data structures
 - **[Features](FEATURES.md)** - Detailed feature documentation
-- **[Development](Development/)** - Development setup and guidelines
 - **[Deployment](DOCKER_DEPLOYMENT.md)** - Docker deployment guide
 - **[Quick Start](QUICKSTART.md)** - Quick start guide
 

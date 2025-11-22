@@ -1,3 +1,8 @@
+---
+title: Colors API
+sidebar_position: 6
+---
+
 # Colors API
 
 Complete API reference for color management endpoints.

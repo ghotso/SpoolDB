@@ -1,3 +1,8 @@
+---
+title: Consumption API
+sidebar_position: 3
+---
+
 # Consumption API
 
 Complete API reference for consumption entry management endpoints.

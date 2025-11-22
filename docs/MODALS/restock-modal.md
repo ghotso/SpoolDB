@@ -1,3 +1,8 @@
+---
+title: Restock Modal
+sidebar_position: 4
+---
+
 # Restock Modal
 
 **File:** `frontend/src/components/RestockModal.tsx`

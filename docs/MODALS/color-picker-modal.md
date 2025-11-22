@@ -1,3 +1,8 @@
+---
+title: Color Picker Modal
+sidebar_position: 6
+---
+
 # Color Picker Modal
 
 **File:** `frontend/src/components/ColorPickerModal.tsx`

@@ -1,3 +1,8 @@
+---
+title: Filaments API
+sidebar_position: 1
+---
+
 # Filaments API
 
 Complete API reference for filament management endpoints.

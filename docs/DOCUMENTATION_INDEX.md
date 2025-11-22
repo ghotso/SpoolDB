@@ -1,3 +1,8 @@
+---
+title: Documentation Index
+sidebar_position: 1
+---
+
 # SpoolDB Documentation Index
 
 This directory contains comprehensive documentation for the SpoolDB project, organized by component type.

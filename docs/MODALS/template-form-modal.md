@@ -1,3 +1,8 @@
+---
+title: Template Form Modal
+sidebar_position: 5
+---
+
 # Template Form Modal
 
 **File:** `frontend/src/components/TemplateFormModal.tsx`

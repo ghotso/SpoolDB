@@ -1,3 +1,8 @@
+---
+title: G-code API
+sidebar_position: 9
+---
+
 # G-code API
 
 Complete API reference for G-code file processing endpoints.

@@ -1,3 +1,8 @@
+---
+title: Notifications API
+sidebar_position: 8
+---
+
 # Notifications API
 
 Complete API reference for notification endpoints.

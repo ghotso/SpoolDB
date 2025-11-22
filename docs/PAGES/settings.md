@@ -1,3 +1,8 @@
+---
+title: Settings Page
+sidebar_position: 6
+---
+
 # Settings Page
 
 **File:** `frontend/src/pages/Settings.tsx`  

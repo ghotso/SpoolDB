@@ -1,3 +1,8 @@
+---
+title: Consumption Form Page
+sidebar_position: 4
+---
+
 # Consumption Form Page
 
 **File:** `frontend/src/pages/ConsumptionForm.tsx`  

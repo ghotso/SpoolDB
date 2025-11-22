@@ -23,10 +23,10 @@ The Inventory page is the main landing page of SpoolDB. It displays all filament
   - Remaining weight in grams
   - Percentage remaining (calculated from spool weights)
   - Progress bar with color coding:
-    - Green: >50% remaining
-    - Yellow: 20-50% remaining
-    - Red: <20% remaining
-  - Low stock warning (if <20% remaining)
+    - Green: `>50%` remaining
+    - Yellow: `20-50%` remaining
+    - Red: `<20%` remaining
+  - Low stock warning (if `<20%` remaining)
   - Archived badge (if archived)
 
 ### Filtering
